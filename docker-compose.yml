@@ -39,19 +39,19 @@ services:
     ports:
       - "3000:8000"
 
-#  frontend:
-#    env_file: ".env"
-#    build:
-#      context: /front
-#    environment:
-#      - VITE_API_RECIPE_URL=http://recipe-service:3000
-#      - VITE_API_USER_URL=http://user-service:3001
-#    depends_on:
-#      - recipe-service
-#      - user-service
-#    ports:
-#      - "5173:5173"
-#      - "4173:4173"
+  frontend:
+    env_file: "./front/.env"
+    build:
+      context: /front
+    environment:
+      - VITE_API_RECIPE_URL=http://recipe-service:3000
+      - VITE_API_USER_URL=http://user-service:3001
+    depends_on:
+      - recipe-service
+      - user-service
+    ports:
+      - "5173:5173"
+      - "4173:4173"
 
 volumes:
   mysql-data:
