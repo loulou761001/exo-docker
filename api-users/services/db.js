@@ -2,10 +2,10 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-  host: 'mysql',
-  port: 3306,
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   user: 'root',
-  password: 'root',
+  password: process.env.DB_PASSWORD,
   database: 'exo2_db'
 });
 

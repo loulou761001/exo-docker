@@ -19,10 +19,10 @@ FROM node:22.10.0-alpine
 COPY --from=builder ./dist ./dist
 
 # Install a lightweight HTTP server to serve the built files
-RUN npm install -g serve
+RUN #npm install -g serve
 
 # Expose Vite's default production port
 EXPOSE 4173
 
 # Serve the static files
-CMD ["serve", "-s", "dist", "-l", "4173"]
+CMD ["npx", "serve", "-s", "dist", "-l", "4173"]
